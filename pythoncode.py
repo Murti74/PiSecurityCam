@@ -22,6 +22,7 @@ time.sleep(1.5)
 camera.rotation = 180
 camera.capture(foto, resize=(800,600))
 camera.close()
+
 mime = MIMEMultipart()
 mime['From'] = frm
 mime['To'] = to
@@ -31,11 +32,13 @@ f = open(pic,'rb')
 img = MIMEImage( f.read())
 f.close()
 mime.attach(img)
+
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
 server.login(frm,'Password') # input your password
 server.sendmail(frm,to,mime.as_string())
 server.quit()
+
 try:
 GPIO.add_event_detect(SENSOR_PIN , GPIO.RISING, callback=mein_callback)
 while True:
