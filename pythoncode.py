@@ -15,7 +15,7 @@ msg = 'Someone was in your room'
 pic = 'picture.jpg'
 
 def mein_callback(channel):
-print('BMovement detected!')
+print('Movement detected!')
 t = time.strftime("%d %m %Y / %H:%M:%S")
 camera = picamera.PiCamera()
 time.sleep(1.5)
