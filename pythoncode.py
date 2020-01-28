@@ -8,8 +8,8 @@ from email.mime.multipart import MIMEMultipart
 SENSOR_PIN = 16
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(SENSOR_PIN, GPIO.IN)
-frm = 'Example@gmail.com' #Sender
-to = 'Example@gmail.com' #Reciever
+frm = 'Example@gmail.com' #Sender email
+to = 'Example@gmail.com' #Reciever email
 subj = 'Movement detected'
 msg = 'Someone was in your room'
 pic = 'picture.jpg'
@@ -35,7 +35,7 @@ mime.attach(img)
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
-server.login(frm,'Password') # input your password
+server.login(frm,'Password') # replace Password with your actual Passwor
 server.sendmail(frm,to,mime.as_string())
 server.quit()
 
