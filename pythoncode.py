@@ -35,7 +35,7 @@ mime.attach(img)
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
-server.login(frm,'Password') # replace Password with your actual Passwor
+server.login(frm,'Password') # replace Password with your actual Password
 server.sendmail(frm,to,mime.as_string())
 server.quit()
 
